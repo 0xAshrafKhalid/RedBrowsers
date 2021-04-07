@@ -1,0 +1,7 @@
+C:\Users\ASHRAF\Documents\GitHub\RedBrowsers\RedBrowsers\RedBrowsers\bin\Debug\RedBrowsers.exe.config
+C:\Users\ASHRAF\Documents\GitHub\RedBrowsers\RedBrowsers\RedBrowsers\bin\Debug\RedBrowsers.exe
+C:\Users\ASHRAF\Documents\GitHub\RedBrowsers\RedBrowsers\RedBrowsers\bin\Debug\RedBrowsers.pdb
+C:\Users\ASHRAF\Documents\GitHub\RedBrowsers\RedBrowsers\RedBrowsers\obj\Debug\RedBrowsers.csproj.CoreCompileInputs.cache
+C:\Users\ASHRAF\Documents\GitHub\RedBrowsers\RedBrowsers\RedBrowsers\obj\Debug\RedBrowsers.exe
+C:\Users\ASHRAF\Documents\GitHub\RedBrowsers\RedBrowsers\RedBrowsers\obj\Debug\RedBrowsers.pdb
+C:\Users\ASHRAF\Documents\GitHub\RedBrowsers\RedBrowsers\RedBrowsers\obj\Debug\RedBrowsers.csprojAssemblyReference.cache
