@@ -8,7 +8,6 @@ using Microsoft.VisualBasic.CompilerServices;
 namespace RedBrowsers.ChromiumEngine
 {
 
-    //Source: https://github.com/quasar/QuasarRAT/
 
     public class SQLiteHandler
     {

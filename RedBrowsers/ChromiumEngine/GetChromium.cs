@@ -12,6 +12,8 @@ namespace RedBrowsers.ChromiumEngine
 {
     public class GetChromium
     {
+
+        // source https://github.com/0xfd3/Chrome-Password-Recovery
         public static string LocalApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         public static string ApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
