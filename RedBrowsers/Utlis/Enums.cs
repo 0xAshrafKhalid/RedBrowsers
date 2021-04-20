@@ -1,8 +1,8 @@
 ﻿
 
-namespace RedBrowsers.Classes
+namespace RedBrowsers.Utlis
 {
-    public class Account
+    public class ExtractedCredentials
     {
         public string UserName { get; set; }
 

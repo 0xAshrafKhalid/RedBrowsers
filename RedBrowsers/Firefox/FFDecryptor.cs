@@ -3,9 +3,8 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace RedBrowsers.Firfox
+namespace RedBrowsers.Firefox
 {
-
     static class FFDecryptor
     {
         [DllImport("kernel32.dll")]
@@ -98,5 +97,4 @@ namespace RedBrowsers.Firfox
             public int SECItemLen;
         }
     }
-
 }

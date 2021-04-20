@@ -11,6 +11,7 @@ namespace RedBrowsers.ChromiumEngine
 
     public class SQLiteHandler
     {
+        // From https://github.com/StrangePerch/ScreenShare/tree/master/Chrome-Password-Recovery-master
         private byte[] db_bytes;
         private ulong encoding;
         private string[] field_names;

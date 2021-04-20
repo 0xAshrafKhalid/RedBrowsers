@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Runtime.InteropServices;
-using RedBrowsers.ChromiumEngine;
-using System.Security.Cryptography;
 
 namespace RedBrowsers.ChromiumEngine
 {
+    // https://github.com/StrangePerch/ScreenShare/tree/master/Chrome-Password-Recovery-master
     public static class BCrypt
     {
         public const uint ERROR_SUCCESS = 0x00000000;
