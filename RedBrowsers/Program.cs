@@ -20,11 +20,11 @@ namespace RedBrowsers
                     case "CSV":
                         {
 
-                            try  
+                            try
                             {
-                                CreateCSV(a, args[1]); 
-                            }  
-                            catch(Exception ex)
+                                CreateCSV(a, args[1]);
+                            }
+                            catch (Exception ex)
                             {
                                 Console.WriteLine(ex.Message);
                             }
@@ -33,34 +33,32 @@ namespace RedBrowsers
 
                     case "TXT":
                         {
-                            try 
+                            try
                             {
-                                File.WriteAllText(args[1],CreateString(a));
+                                File.WriteAllText(args[1], CreateString(a));
                             }
                             catch (Exception ex)
-                            { 
+                            {
                                 Console.WriteLine(ex.Message);
                             }
 
                             break;
                         }
-                    default:
-                        {
-                            Console.WriteLine(CreateString(a));
-                            break;
-
-                        }
-                }
 
                 }
-
-
-            Console.ReadLine();
 
             }
+            else 
+            {
+                Console.WriteLine(CreateString(a));
+
+            }
+            Console.ReadLine();
+
+        }
 
     }
 
 
-    }
+}
 

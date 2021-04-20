@@ -5,9 +5,7 @@ using System.Text;
 
 namespace RedBrowsers.Firfox
 {
-    /// <summary>
-    /// Firefox helper class
-    /// </summary>
+
     static class FFDecryptor
     {
         [DllImport("kernel32.dll")]

