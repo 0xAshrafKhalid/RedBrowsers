@@ -48,13 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChromiumEngine\Enc\BCrypt.cs" />
-    <Compile Include="ChromiumEngine\Enc\AesGcm.cs" />
-    <Compile Include="ChromiumEngine\GetChromium.cs" />
+    <Compile Include="ChromiumEngine\Cryptography\BCrypt.cs" />
+    <Compile Include="ChromiumEngine\Cryptography\AesGcm.cs" />
+    <Compile Include="ChromiumEngine\ChromiumStorage.cs" />
     <Compile Include="ChromiumEngine\SQL\SQLite.cs" />
-    <Compile Include="Classes\Classes.cs" />
+    <Compile Include="Utlis\Enums.cs" />
     <Compile Include="Firefox\FFDecryptor.cs" />
-    <Compile Include="Firefox\FirefoxPassReader.cs" />
+    <Compile Include="Firefox\FirefoxStorage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utlis\Utlis.cs" />

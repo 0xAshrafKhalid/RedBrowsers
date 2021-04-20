@@ -74,7 +74,6 @@ namespace RedBrowsers.Firefox
 
                 }
             }
-
             return null;
         }
         
