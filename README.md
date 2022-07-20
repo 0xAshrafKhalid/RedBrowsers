@@ -1,4 +1,4 @@
 # RedBrowsers
 
 
-Dumping Chromium Based Browser , Firfox , IE Credentials
+Dumping Chromium Based Browsers , Firfox , IE Credentials
