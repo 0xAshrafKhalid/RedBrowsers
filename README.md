@@ -1,11 +1,4 @@
 # RedBrowsers
 
 
-Google Chrome
-Opera
-Yandex
-Brave Browser
-MS Edge
-Firefox
-Internet Explorer
-
+Dumping Chromium Based Browser , Firfox , IE Credentials
